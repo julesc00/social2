@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-vu9=n$j8ze9no#u$6^y@0n4lvgt2t@=yw1s++mk6bupt(x8y5)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "mysite.com",
+    "localhost",
+    "127.0.0.1"
+]
 
 
 # Application definition
@@ -41,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "rest_framework",
+    "social_django",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -136,7 +142,13 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "account.authentication.EmailAuthBackend",
+    "social_core.backends.facebook.FacebookOAuth2",
+    "social_core.backends.twitter.TwitterOAuth",
+    "social_core.backends.google.GoogleOAuth2",
 ]
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "296064272134-pponolt2vt71irns6bcmrpn3ns6r1gsq.apps.googleusercontent.com"
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "hKuCBGr5S5AVfGCy8JNie-Xi"
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
