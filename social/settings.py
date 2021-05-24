@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "social_django",
     "django_extensions",
+
+    "images.apps.ImagesConfig",
 ]
 
 MIDDLEWARE = [
