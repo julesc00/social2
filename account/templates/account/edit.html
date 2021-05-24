@@ -5,7 +5,7 @@
 {% block content %}
     <h1>Edit your account</h1>
     <p>You can edit your account using the following form:</p>
-    <form action="" method="POST">
+    <form action="" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ user_form.as_p }}
         {{ profile_form.as_p }}
