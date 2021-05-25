@@ -17,6 +17,12 @@ class Image(models.Model):
                                         blank=True)
     created = models.DateField(auto_now_add=True, db_index=True)
 
+    class Meta:
+        indexes = [
+            models.Index(fields=["title", "slug"]),
+            models.Index(fields=["slug"], name="slug_idx"),
+        ]
+
     def __str__(self):
         return self.title
 
